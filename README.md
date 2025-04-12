@@ -1,4 +1,4 @@
-# Audiobookshelf Electron Wrapper
+# Audiobookshelf-player
 
 This is an **Electron wrapper** for the **Audiobookshelf** web app. It allows users to enter the server URL of their Audiobookshelf instance and wraps the web interface into a native desktop application for Windows.
 
@@ -52,10 +52,6 @@ npm install
 ```
 
 This installs **Electron** and **Electron Packager** as development dependencies.
-
-### 3. **Configure the icon**
-
-Place your **`icon.ico`** file in the project root directory. You can use a free icon generator like [icoconvert.com](https://icoconvert.com/) to create `.ico` files.
 
 ---
 
