@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Set Server URL</title>
+</head>
+<body>
+  <h2>Enter Audiobookshelf Server URL</h2>
+  <input type="text" id="urlInput" placeholder="https://your-server-url.com" style="width: 90%;">
+  <button onclick="submitURL()">Submit</button>
+
+  <script>
+    const { ipcRenderer } = window.electron;
+
+    function submitURL() {
+      const url = document.getElementById('urlInput').value;
+      console.log("🔘 Submitting URL:", url);
+
+      if (url) {
+        ipcRenderer.send('set-server-url', url);
+      } else {
+        console.error("🚫 URL is empty or invalid");
+      }
+    }
+
+    ipcRenderer.on('url-saved', (event, message) => {
+      console.log('Received confirmation from main process:', message);
+      alert(message);
+    });
+  </script>
+</body>
+</html>
